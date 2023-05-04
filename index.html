@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagenes/datos-encriptados.png" />
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+        integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+        crossorigin="anonymous"></script>
+    <title>Encriptador de Texto</title>
+</head>
+
+<body>
+    <header>
+        <img src="imagenes/logo-aluraespanhol.svg" alt="singo de admiración">
+    </header>
+
+    <main class="container">
+        <section class="encrypter-area">
+
+            <textarea class="textarea-encrypt" placeholder="Ingrese el texto aquí"></textarea>
+
+            <div class="conditions">
+                <i class="fas fa-exclamation-circle" style="color: #265E58;"></i>
+                <p id="conds">&nbsp; Solo letras minúsculas y sin acentos</p>
+            </div>
+
+            <div class="buttons">
+                <button class="btn-encrypt" type="button" value="Encriptar">Encriptar</button>
+                <button class="btn-decrypt" type="button" value="Desencriptar">Desencriptar</button>
+            </div>
+
+        </section>
+
+        <section class="encrypter">
+
+            <div class="encrypter-img">
+                <i class="fa fa-user-secret"></i>
+            </div>
+
+            <div class="encrypted-msg">
+                <h2>Ningún mensaje fue encontrado</h2>
+                <p>Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>
+
+            <div class="output">
+                <p class="output-text"></p>
+            </div>
+
+            <div class="copy">
+                <input class="btn-copy" type="button" value="&#x1F4CB; Copiar">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="content">
+            <div class="top">
+                <span>Creado por: Juliana Mora López</span>
+                <div class="media-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p>Copyright &copy; 2023 All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+<script src="index.js"></script>
+
+</html>
