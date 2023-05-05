@@ -1,102 +1,105 @@
-let botonEncriptar = document.querySelector(".btn-encrypt");
-let botonDesencriptar = document.querySelector(".btn-decrypt");
+let btnEncrypt = document.querySelector(".btn-encrypt");
+let btnDecrypt = document.querySelector(".btn-decrypt");
 let munieco = document.querySelector(".encrypter-img");
-let contenedor = document.querySelector(".encrypted-msg");
-let resultado = document.querySelector(".output-text");
-const cajatexto = document.querySelector(".textarea-encrypt");
+let container = document.querySelector(".encrypted-msg");
+let result = document.querySelector(".output-text");
+const textEncrypt = document.querySelector(".textarea-encrypt");
 
 
-botonEncriptar.onclick = function () {
-    ocultarAdelante();
-    const cajatexto = recuperarTexto();
-    if (cajatexto.length > 0) {
-        resultado.textContent = encriptarTexto(cajatexto);
+btnEncrypt.onclick = function () {
+    hideElements();
+    const text = getText();
+    if (text.length > 0) {
+        result.textContent = encryptText(text);
     } else {
-        mostrarAlerta();
-        munieco.classList.remove("ocultar");
-        contenedor.classList.remove("ocultar");
-        resultado.textContent = "";
+        showAlert();
+        munieco.classList.remove("hide");
+        container.classList.remove("hide");
+        result.textContent = "";
     }
 };
 
-botonDesencriptar.onclick = function () {
-    ocultarAdelante();
-    const cajatexto = recuperarTexto();
-    if (cajatexto.length > 0) {
-        resultado.textContent = desencriptarTexto(cajatexto);
+btnDecrypt.onclick = function () {
+    hideElements();
+    const text = getText();
+    if (text.length > 0) {
+        result.textContent = decryptText(text);
     } else {
-        mostrarAlerta();
-        munieco.classList.remove("ocultar");
-        contenedor.classList.remove("ocultar");
-        resultado.textContent = "";
+        showAlert();
+        munieco.classList.remove("hide");
+        container.classList.remove("hide");
+        result.textContent = "";
     }
 };
 
-function recuperarTexto() {
-    const cajatexto = document.querySelector(".textarea-encrypt");
-    let value = cajatexto.value.trim();
+function getText() {
+    const text = document.querySelector(".textarea-encrypt");
+    let value = text.value.trim();
 
-    // while (/[^a-z]/.test(value) || /[áéíóúÁÉÍÓÚÜü]/.test(value)) {
-    //     swal("Ooops!", "Ingrese solo letras minúsculas y sin acentos", "info");
-    //     value = "";
-    //     cajatexto.value = value;
-    //     value = cajatexto.value.trim();
-    // }
+    // Reemplazar caracteres especiales y acentos
+    value = value.replace(/[^\w\s]/gi, '').normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+    if (!/^[a-z\s]+$/.test(value)) {
+        swal("Ooops!", "Ingrese solo letras minúsculas y sin acentos", "info");
+        value = "";
+        text.value = value;
+        value = text.value.trim();
+    }
 
     return value;
 }
 
-cajatexto.addEventListener("input", function () {
+textEncrypt.addEventListener("input", function () {
     const value = this.value;
     this.value = value.toLowerCase();
 });
 
-function ocultarAdelante() {
-    munieco.classList.add("ocultar");
-    contenedor.classList.add("ocultar");
+function hideElements() {
+    munieco.classList.add("hide");
+    container.classList.add("hide");
 }
 
-function encriptarTexto(mensaje) {
-    const textoFinal = mensaje
+function encryptText(msg) {
+    const finalText = msg
         .replace(/e/gi, "enter")
         .replace(/i/gi, "imes")
         .replace(/a/gi, "ai")
         .replace(/o/gi, "ober")
         .replace(/u/gi, "ufat");
 
-    if (textoFinal.length > 0) {
-        cajatexto.value = "";
-        return textoFinal;
+    if (finalText.length > 0) {
+        textEncrypt.value = "";
+        return finalText;
     } else {
-        mostrarAlerta();
+        showAlert();
     }
 }
 
-function desencriptarTexto(mensaje) {
-    const textoFinal = mensaje
+function decryptText(msg) {
+    const finalText = msg
         .replace(/enter/gi, "e")
         .replace(/imes/gi, "i")
         .replace(/ai/gi, "a")
         .replace(/ober/gi, "o")
         .replace(/ufat/gi, "u");
 
-    if (textoFinal.length > 0) {
-        cajatexto.value = "";
-        return textoFinal;
+    if (finalText.length > 0) {
+        textEncrypt.value = "";
+        return finalText;
     } else {
-        mostrarAlerta();
+        showAlert();
     }
 }
 
-function mostrarAlerta() {
+function showAlert() {
     swal("Ooops!", "Debes ingresar un texto \n Ingrese solo letras minúsculas y sin acentos", "info");
 }
 
-const btnCopiar = document.querySelector(".btn-copy");
-btnCopiar.onclick = function () {
-    const contenido = resultado.textContent.trim();
-    if (contenido.length > 0) {
-        navigator.clipboard.writeText(contenido).then(() => {
+const btnCopy = document.querySelector(".btn-copy");
+btnCopy.onclick = function () {
+    const content = result.textContent.trim();
+    if (content.length > 0) {
+        navigator.clipboard.writeText(content).then(() => {
             swal("Copiado!", "El texto ha sido copiado al portapapeles", "success");
         }).catch(() => {
             swal("Oops!", "No se pudo copiar el texto", "error");
