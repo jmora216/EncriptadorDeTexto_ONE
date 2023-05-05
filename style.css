@@ -272,7 +272,7 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%; 
+    width: 100%;
     z-index: 9999;
     background-color: #333;
     color: #fff;
@@ -326,7 +326,7 @@ footer .content .top {
 }
 
 .top .media-icons a:nth-child(1) {
-    background: #171515;
+    background: #4267B2;
 }
 
 .top .media-icons a:nth-child(1):hover {
@@ -342,6 +342,11 @@ footer .content .top {
     color: #1DA1F2;
     background: #fff;
 }
+
+.my-pnotify-style {
+    font-family: Arial, sans-serif;
+}
+
 
 /* Responsive design */
 @media (max-width: 920px) {
@@ -509,25 +514,4 @@ footer .content .top {
         padding: 6px 8px;
     }
 
-
-}
-
-.swal-title {
-    font-family: "Open Sans", -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-align: center;
-    display: "flex",
-}
-
-.swal-text {
-    font-family: "Open Sans", -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-align: center;
-}
-
-.swal-button {
-    background-color: #368ff4;
-}
-
-.swal-button-container {
-    display: flex;
-    justify-content: center;
 }

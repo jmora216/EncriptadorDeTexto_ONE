@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="imagenes/datos-encriptados.png" />
+    <link rel="shortcut icon" href="imagenes/laptop-code-solid.svg" />
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pnotify@4.0.1/dist/PNotifyBrightTheme.css" />
+    <script src="https://cdn.jsdelivr.net/npm/pnotify@4.0.1/dist/iife/PNotify.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
         integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
         crossorigin="anonymous"></script>
@@ -18,19 +19,23 @@
 
 <body>
     <header>
+        <!--Logo del sitio web-->
         <img src="imagenes/logo-aluraespanhol.svg" alt="singo de admiración">
     </header>
 
     <main class="container">
         <section class="encrypter-area">
 
+            <!--Área para ingresar el texto a encriptar-->
             <textarea class="textarea-encrypt" placeholder="Ingrese el texto aquí"></textarea>
 
+            <!--Mensaje que indica las condiciones para el texto ingresado-->
             <div class="conditions">
                 <i class="fas fa-exclamation-circle" style="color: #265E58;"></i>
                 <p id="conds">&nbsp; Solo letras minúsculas y sin acentos</p>
             </div>
 
+            <!--Botones para encriptar o desencriptar el texto ingresado-->
             <div class="buttons">
                 <button class="btn-encrypt" type="button" value="Encriptar">Encriptar</button>
                 <button class="btn-decrypt" type="button" value="Desencriptar">Desencriptar</button>
@@ -40,19 +45,23 @@
 
         <section class="encrypter">
 
+            <!--Icono que representa la encriptación-->
             <div class="encrypter-img">
                 <i class="fa fa-user-secret"></i>
             </div>
 
+            <!--Mensaje que se muestra en el area de encriptado-->
             <div class="encrypted-msg">
                 <h2>Ningún mensaje fue encontrado</h2>
                 <p>Ingresa el texto que desees encriptar o desencriptar</p>
             </div>
 
+            <!--Área donde se muestra el texto encriptado o desencriptado-->
             <div class="output">
                 <p class="output-text"></p>
             </div>
 
+            <!--Botón para copiar el texto encriptado o desencriptado-->
             <div class="copy">
                 <input class="btn-copy" type="button" value="&#x1F4CB; Copiar">
             </div>
@@ -62,8 +71,9 @@
     <footer>
         <div class="content">
             <div class="top">
-                <span>Creado por: Juliana Mora López</span>
+                
                 <div class="media-icons">
+                    <span>Developed by: Juliana Mora López</span>
                     <a href="https://github.com/jmora216/EncriptadorDeTexto_ONE.git"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/juliana-mora-l%C3%B3pez-bb7192a7/"><i class="fab fa-linkedin-in"></i></a>
                 </div>
