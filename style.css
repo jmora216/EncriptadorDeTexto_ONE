@@ -5,18 +5,57 @@
 }
 
 body {
-    background-image: -webkit-radial-gradient(top, circle cover, #51807F 0%, #ffffff6b 80%);
+    background-image: -webkit-radial-gradient(top, circle cover, #51807f 0%, #ffffff16 100%);
     padding-bottom: 10px;
+}
+
+.dark-mode {
+    /* Estilos para modo oscuro */
+    background-color: #000000;
 }
 
 header {
     display: flex;
     align-items: center;
-    padding: 2em 2em 1em;
+    padding: 1em 2em 2em;
 }
 
-header img {
-    margin-right: 1rem;
+header .alura-logo {
+    width: 8%;
+}
+
+#dark-mode-btn {
+    padding: 0.5% 0.2%;
+    background-color: #51807F;
+    border: none;
+    font-size: 10px;
+    line-height: 19px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.dark-mode #dark-mode-btn {
+    padding: 0.5% 0.2%;
+    background-color: #193d3c;
+    border: none;
+    font-size: 10px;
+    line-height: 19px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+#dark-mode-btn {
+    margin-left: 6rem;
 }
 
 header h1 {
@@ -35,6 +74,12 @@ header h1 {
     justify-content: space-between;
     font-family: 'Inter', sans-serif;
 }
+
+.dark-mode .textarea-encrypt {
+    background-color: #333;
+    color: #c3c3c3;
+    border: 1px solid #333;    
+} 
 
 .textarea-encrypt {
     position: absolute;
@@ -65,6 +110,10 @@ header h1 {
     color: #005555;
 }
 
+.dark-mode .textarea-encrypt::placeholder {
+    color: #c3c3c3;
+}
+
 .textarea-encrypt:focus,
 .textarea-encrypt:active {
     outline: none;
@@ -90,6 +139,10 @@ header h1 {
     flex: none;
     order: 1;
     flex-grow: 0;
+}
+
+.dark-mode #conds {
+    color: #c3c3c3;
 }
 
 .buttons {
@@ -165,8 +218,13 @@ header h1 {
     background: #FFFFFF;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
-    top: -5%;
+    top: -10%;
 }
+
+.dark-mode .encrypter {
+    background-color: #333;
+    color: #c3c3c3;
+} 
 
 .encrypter-img {
     display: flex;
@@ -214,6 +272,12 @@ header h1 {
     color: #005555;
 }
 
+.dark-mode .encrypter-img,
+.dark-mode .encrypted-msg h2,
+.dark-mode .encrypted-msg p {
+    color: #c3c3c3;
+}
+
 .output {
     position: absolute;
     padding: 1em;
@@ -253,6 +317,12 @@ header h1 {
     transform: translateX(-50%);
 }
 
+.dark-mode .btn-copy {
+    background-color: #a6a6a6;
+    color: #fff;
+    border: none;
+}
+
 .btn-copy:hover {
     border: 1px solid;
     box-shadow: inset 0 0 20px rgba(1, 1, 1, 0.5),
@@ -277,8 +347,8 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
-    height: 40px;
+    padding: 15px;
+    height: 50px;
 }
 
 footer .content {
@@ -299,9 +369,16 @@ footer .content .top {
     justify-content: space-between;
 }
 
-.content .top {
+.content .top p{
     color: #fff;
     font-size: 15px;
+    margin: 10px;
+}
+
+.content .top span{
+    color: #fff;
+    font-size: 15px;
+    margin: 10px;
 }
 
 .content .top .media-icons {
@@ -312,44 +389,51 @@ footer .content .top {
     height: 30px;
     width: 30px;
     margin: 0.2rem;
-    border-radius: 50%;
+    border-radius: 30%;
     text-align: center;
     line-height: 30px;
     color: #fff;
     font-size: 20px;
     text-decoration: none;
     transition: all 0.4s ease;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    -webkit-border-radius: 30%;
+    -moz-border-radius: 30%;
+    -ms-border-radius: 30%;
+    -o-border-radius: 30%;
 }
 
-.top .media-icons a:nth-child(1) {
-    background: #4267B2;
+.top .media-icons a:nth-child(2) {
+    background: #3aa69b;
 }
 
-.top .media-icons a:nth-child(1):hover {
+.top .media-icons a:nth-child(2):hover {
     color: #4267B2;
     background: #fff;
 }
 
-.top .media-icons a:nth-child(2) {
+.top .media-icons a:nth-child(3) {
     background: #0077b5;
 }
 
-.top .media-icons a:nth-child(2):hover {
+.top .media-icons a:nth-child(3):hover {
     color: #1DA1F2;
     background: #fff;
 }
 
-.my-pnotify-style {
-    font-family: Arial, sans-serif;
+.top img {
+    width: 9%;
 }
 
+.my-pnotify-style {
+    font-family: Arial, sans-serif;
+} 
 
 /* Responsive design */
 @media (max-width: 920px) {
+    header .alura-logo {
+        width: 18%;
+    }
+
     .container {
         display: flex;
         flex-direction: row;
@@ -423,25 +507,48 @@ footer .content .top {
         word-wrap: break-word;
     }
 
+    .btn-copy:hover {
+        border: 1px solid;
+        box-shadow: inset 0 0 20px rgba(1, 1, 1, 0.5),
+            0 0 20px rgba(255, 255, 255, 0.2);
+        outline-color: rgba(255, 255, 255, 0);
+        outline-offset: 15px;
+        padding: 10px 32px;
+        font-size: 0.8rem;
+    }
+
     .content .top {
         font-size: 10px;
     }
 
     .content .top .media-icons a {
-        height: 20px;
-        width: 20px;
+        height: 18px;
+        width: 28px;
         margin: 0.2rem;
-        border-radius: 50%;
+        border-radius: 30%;
         text-align: center;
         line-height: 20px;
         color: #fff;
-        font-size: 15px;
+        font-size: 10px;
+        -webkit-border-radius: 30%;
+        -moz-border-radius: 30%;
+        -ms-border-radius: 30%;
+        -o-border-radius: 30%;
+}
+
+    .top img {
+        top: 0;
+        display: none;
+        visibility: hidden;
     }
 
 }
 
-
 @media (min-width: 768px) and (max-width: 991px) {
+    header img {
+        width: 17%;
+    }
+
     .container {
         display: flex;
         flex-direction: row;
@@ -489,7 +596,7 @@ footer .content .top {
         width: 80%;
         height: 30%;
         left: 10%;
-        top: 60%;
+        top: 58%;
     }
 
     .encrypted-msg {
@@ -513,5 +620,41 @@ footer .content .top {
         font-size: 0.8rem;
         padding: 6px 8px;
     }
+
+    .btn-copy:hover {
+        padding: 9px 11px;
+        font-size: 0.8rem;
+    }
+
+    footer {
+        height: 30px;
+    }
+
+    footer {
+        height: 30px;
+    }
+
+    .content .top .media-icons a {
+        height: 32px;
+        width: 34px;
+        margin: 0.2rem;
+        border-radius: 30%;
+        text-align: center;
+        line-height: 33px;
+        color: #fff;
+        font-size: 18px;
+        -webkit-border-radius: 30%;
+        -moz-border-radius: 30%;
+        -ms-border-radius: 30%;
+        -o-border-radius: 30%;
+}
+
+    .top img {
+        top: 0;
+        display: none;
+        visibility: hidden;
+    }
+
+    
 
 }

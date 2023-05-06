@@ -51,7 +51,7 @@ function getText() {
         return "";
     }
 
-    if (!/^[a-z\s]+$/.test(value)) {
+    if (!/^[a-zñ\s]+$/.test(value)) {
         PNotify.error({
             title: "Ooops!",
             text: "Ingrese solamente letras minúsculas y sin acentos.",
@@ -146,3 +146,11 @@ btnCopy.onclick = function () {
         });
     }
 };
+
+const darkModeBtn = document.getElementById("dark-mode-btn");
+const body = document.body;
+
+darkModeBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+});
+
